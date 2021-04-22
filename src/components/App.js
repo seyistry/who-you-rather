@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleIntialData } from "../actions/shared";
 import Dashboard from "./Dashboard";
+import NewQuestion from './NewQuestion'
 
 class App extends Component {
     componentDidMount() {
@@ -11,7 +12,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Dashboard />
+                <NewQuestion />
             </div>
         );
     }

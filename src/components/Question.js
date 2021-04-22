@@ -13,8 +13,8 @@ class Question extends Component {
         const { name, optionOne, optionTwo, avatar } = question;
 
         return (
-            <div className="question">
-                <p className="question-title">{`${name} asks`}</p>
+            <div className="question-container">
+                <p className="question-creator">{`${name} asks`}</p>
                 <div className="question-content">
                     <img src={avatar} alt="avatar" className="avatar" />
                     <div className="question-info">

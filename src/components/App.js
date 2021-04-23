@@ -20,7 +20,7 @@ class App extends Component {
                         <div>
                             <Route path="/" exact component={Dashboard} />
                             <Route path="/quiz/:id" component={NewQuestion} />
-                            <Route path="/ans/:id" component={NewQuestion} />
+                            <Route path="/result/:id" component={NewQuestion} />
                             <Route path="/new" component={NewQuestion} />
                         </div>
                     </div>

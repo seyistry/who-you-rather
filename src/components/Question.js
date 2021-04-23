@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { formatQuestion } from "../utils/helpers";
+import {Link, withRouter} from 'react-router-dom'
 
 class Question extends Component {
     render() {
         const { question } = this.props;
-
-        if (question === null) {
-            return <p>This question doesn't exist</p>;
-        }
 
         const { name, optionOne, optionTwo, avatar } = question;
 
@@ -18,13 +15,11 @@ class Question extends Component {
                 <div className="question-content">
                     <img src={avatar} alt="avatar" className="avatar" />
                     <div className="question-info">
-                        <div>
-                            {optionOne.text}
-                        </div>
-                        <div>
-                            {optionTwo.text}
-                        </div>
-                        <button className='btn'>View poll</button>
+                        <div>{optionOne.text}</div>
+                        <div>{optionTwo.text}</div>
+                        <Link to={`/${this.props.value}/${this.props.id}`} className="tweet">
+                            <button className="btn">View poll</button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -43,4 +38,4 @@ function mapStateToProps({ authedUser, users, questions }, { id }) {
     };
 }
 
-export default connect(mapStateToProps)(Question);
+export default withRouter(connect(mapStateToProps)(Question));

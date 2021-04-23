@@ -5,7 +5,7 @@ import Question from './Question'
 class Answered extends Component {
     render() {
         return (
-            <Question id={this.props.id}/>
+            <Question id={this.props.id} value='poll'/>
         );
     }
 }

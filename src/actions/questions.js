@@ -30,10 +30,10 @@ export function handleAddQuestion(optionOneText, optionTwoText) {
     };
 }
 
-function saveAnswer({ id, authedUser, answer }) {
+function saveAnswer( authedUser, qid, answer ) {
     return {
         type: SAVE_ANSWER,
-        id,
+        qid,
         authedUser,
         answer,
     };
@@ -44,8 +44,7 @@ export function handleSaveQuestionAnswer(qid, answer) {
 
         const { authedUser } = getState();
         
-        return saveQuestionAnswer({ authedUser, qid, answer }).then((answer) =>
-            dispatch(saveAnswer(answer))
-        );
+        dispatch(saveAnswer(authedUser, qid, answer))
+        return saveQuestionAnswer({ authedUser, qid, answer });
     };
 }

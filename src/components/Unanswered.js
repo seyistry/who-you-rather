@@ -4,7 +4,7 @@ import Question from './Question'
 class Unanswered extends Component {
     render() {
         return (
-            <Question id={this.props.id} value='quiz'/>
+            <Question id={this.props.id} value='questions'/>
         );
     }
 }

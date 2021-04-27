@@ -10,5 +10,4 @@ class Answered extends Component {
     }
 }
 
-
 export default Answered;

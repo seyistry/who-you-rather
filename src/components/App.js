@@ -26,7 +26,7 @@ class App extends Component {
                                 <Route path="/" exact component={Dashboard} />
                                 <Route path="/questions/:id" component={QuizView} />
                                 <Route path="/poll/:id" component={PollView} />
-                                <Route path="/new" component={NewQuestion} />
+                                <Route path="/add" component={NewQuestion} />
                             </div>
                         )}
                     </div>

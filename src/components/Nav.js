@@ -34,7 +34,7 @@ class Nav extends Component {
                         ) : (
                             <div>
                                 <span>Hello {users[authedUser].name}</span>
-                                <img src={users[authedUser].avatarURL} />
+                                <img src={users[authedUser].avatarURL} alt={users[authedUser].name}/>
                                 <span onClick={this.handleClick}>Logout</span>
                             </div>
                         )}
@@ -46,7 +46,6 @@ class Nav extends Component {
 }
 
 function mapStateToProps({ authedUser, users }) {
-    console.log(users);
     return {
         authedUser,
         users,

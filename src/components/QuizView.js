@@ -24,7 +24,6 @@ class QuizView extends Component {
         e.preventDefault();
 
         const { answer } = this.state;
-        console.log(answer)
         const { dispatch, id } = this.props;
 
         dispatch(handleSaveQuestionAnswer(id, answer));

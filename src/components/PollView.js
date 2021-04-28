@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 class PollView extends Component {
     render() {
-        const { id, authedUser, question } = this.props;
+        const {question } = this.props;
 
         if (question === undefined) {
             return <p>The Poll Doesn't exist</p>;

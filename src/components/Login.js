@@ -11,7 +11,6 @@ class Login extends Component {
 
     selectAuthedUser = (e) => {
         const toggle = e.target.value;
-        console.log(toggle);
         if (toggle !== "btnDisabled") {
             const id = e.target.value;
             this.setState(() => ({
@@ -40,7 +39,7 @@ class Login extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label for="User">Choose a User:</label>
+                    <p>Choose a User:</p>
                     <select
                         name="cars"
                         id="cars"

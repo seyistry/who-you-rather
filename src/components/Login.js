@@ -5,14 +5,25 @@ import { setAuthedUser } from "../actions/authedUser";
 
 class Login extends Component {
     state = {
+        toggle: "btnDisabled",
         id: "",
     };
 
     selectAuthedUser = (e) => {
-        const id = e.target.value;
-        this.setState(() => ({
-            id,
-        }));
+        const toggle = e.target.value;
+        console.log(toggle);
+        if (toggle !== "btnDisabled") {
+            const id = e.target.value;
+            this.setState(() => ({
+                id,
+                toggle: false,
+            }));
+        } else {
+            this.setState(() => ({
+                id: "",
+                toggle: "btnDisabled",
+            }));
+        }
     };
 
     handleSubmit = (e) => {
@@ -35,17 +46,19 @@ class Login extends Component {
                         id="cars"
                         onChange={this.selectAuthedUser}
                     >
-                        <option value=""></option>
+                        <option value="btnDisabled"></option>
                         {userIds.map((user) => (
-                            <option
-                                key={user}
-                                value={users[user].id}
-                            >
+                            <option key={user} value={users[user].id}>
                                 {users[user].name}
                             </option>
                         ))}
                     </select>
-                    <button type="submit">Submit</button>
+                    <button
+                        type="submit"
+                        disabled={this.state.toggle === "btnDisabled"}
+                    >
+                        Submit
+                    </button>
                 </form>
             </div>
         );

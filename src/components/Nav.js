@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
+import { setAuthedUser } from "../actions/authedUser";
+
 class Nav extends Component {
     handleClick = (e) => {
         e.preventDefault();
-        this.setState({ toggle: false });
+        this.props.dispatch(setAuthedUser(null));
     };
     render() {
         const { authedUser, users } = this.props;
@@ -31,13 +33,8 @@ class Nav extends Component {
                             <div></div>
                         ) : (
                             <div>
-                                <span>Hello {authedUser}</span>
-                                <img
-                                    src={
-                                        users[authedUser]
-                                            .avatarURL
-                                    }
-                                />
+                                <span>Hello {users[authedUser].name}</span>
+                                <img src={users[authedUser].avatarURL} />
                                 <span onClick={this.handleClick}>Logout</span>
                             </div>
                         )}

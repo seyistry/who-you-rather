@@ -12,8 +12,8 @@ class PollView extends Component {
         const { optionOne, optionTwo } = question;
         const one = optionOne.votes.length;
         const two = optionTwo.votes.length;
-        const percentOne = (one / (one + two)) * 100;
-        const percentTwo = (two / (one + two)) * 100;
+        const percentOne = Math.round((one / (one + two)) * 100);
+        const percentTwo = Math.round((two / (one + two)) * 100);
         return (
             <div>
                 <p>Would you rather</p>

@@ -3,10 +3,14 @@ import { connect } from "react-redux";
 
 class PollView extends Component {
     render() {
-        const {question } = this.props;
+        const { question, user } = this.props;
 
         if (question === undefined) {
             return <p>The Poll Doesn't exist</p>;
+        }
+
+        if (user === "optionOne") {
+        } else {
         }
 
         const { optionOne, optionTwo } = question;
@@ -17,25 +21,38 @@ class PollView extends Component {
         return (
             <div>
                 <p>Would you rather</p>
-                <div>
-                    <p>
-                        {optionOne.text} Total votes: {one} at {percentOne}%
-                    </p>
-                    <p>
-                        {optionTwo.text} Total votes: {two} at {percentTwo}%
-                    </p>
-                </div>
+                {user === "optionOne" ? (
+                    <div>
+                        <p>
+                            {optionOne.text} Total votes: {one} at {percentOne}% user choice
+                        </p>
+                        <p>
+                            {optionTwo.text} Total votes: {two} at {percentTwo}%
+                        </p>
+                    </div>
+                ) : (
+                    <div>
+                        <p>
+                            {optionOne.text} Total votes: {one} at {percentOne}%
+                        </p>
+                        <p>
+                            {optionTwo.text} Total votes: {two} at {percentTwo}% user choice
+                        </p>
+                    </div>
+                )}
             </div>
         );
     }
 }
 
-function mapStateToProps({ authedUser, questions }, props) {
+function mapStateToProps({ authedUser, questions, users }, props) {
     const { id } = props.match.params;
     const question = questions[id];
+    const user = users[authedUser].answers[id];
+    console.log(user);
     return {
-        authedUser,
         question,
+        user,
     };
 }
 

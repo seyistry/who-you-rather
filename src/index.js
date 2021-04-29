@@ -10,8 +10,38 @@ import middleware from './middleware'
 
 const store = createStore(reducers, middleware)
 
+function ColorfulBorder() {
+    return (
+        <React.Fragment>
+            <ul className="border-container">
+                <li
+                    className="border-item"
+                    style={{ background: "var(--red)" }}
+                />
+                <li
+                    className="border-item"
+                    style={{ background: "var(--blue)" }}
+                />
+                <li
+                    className="border-item"
+                    style={{ background: "var(--pink)" }}
+                />
+                <li
+                    className="border-item"
+                    style={{ background: "var(--yellow)" }}
+                />
+                <li
+                    className="border-item"
+                    style={{ background: "var(--aqua)" }}
+                />
+            </ul>
+        </React.Fragment>
+    );
+}
+
 ReactDOM.render(
     <React.StrictMode>
+        <ColorfulBorder />
         <Provider store={store}>
             <App />
         </Provider>

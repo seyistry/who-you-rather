@@ -23,38 +23,48 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div>
-                <div className="dashboard-container">
-                    <span
-                        className="dashboard-title"
-                        onClick={this.handleUnAnswerView}
-                    >
-                        Unanswered Question
-                    </span>
-                    <span
-                        className="dashboard-title"
-                        onClick={this.handleAnswerView}
-                    >
-                        Answered Question
-                    </span>
+            <div className='center'>
+                <div className="card">
+                    <div className="card-header">
+                        <ul className="nav nav-tabs card-header-tabs">
+                            <li className="nav-item">
+                                <span
+                                    className="nav-link active"
+                                    onClick={this.handleUnAnswerView}
+                                >
+                                    Unanswered Question
+                                </span>
+                            </li>
+                            <li class="nav-item">
+                                <span
+                                    className="nav-link"
+                                    onClick={this.handleAnswerView}
+                                >
+                                    Answered Question
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="card-body">
+                        <ul>
+                            {this.state.toggle === true
+                                ? this.props.unAnsweredIds.map((id) => (
+                                      <li key={id}>
+                                          <div>
+                                              <Unanswered id={id} />
+                                          </div>
+                                      </li>
+                                  ))
+                                : this.props.answeredIds.map((id) => (
+                                      <li key={id}>
+                                          <div>
+                                              <Answered id={id} />
+                                          </div>
+                                      </li>
+                                  ))}
+                        </ul>
+                    </div>
                 </div>
-                <ul>
-                    {this.state.toggle === true
-                        ? this.props.unAnsweredIds.map((id) => (
-                              <li key={id}>
-                                  <div>
-                                      <Unanswered id={id} />
-                                  </div>
-                              </li>
-                          ))
-                        : this.props.answeredIds.map((id) => (
-                              <li key={id}>
-                                  <div>
-                                      <Answered id={id} />
-                                  </div>
-                              </li>
-                          ))}
-                </ul>
             </div>
         );
     }

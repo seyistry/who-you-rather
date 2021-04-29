@@ -37,27 +37,47 @@ class Login extends Component {
     render() {
         const { userIds, users } = this.props;
         return (
-            <div>
+            <div className='loginCenter'>
                 <form onSubmit={this.handleSubmit}>
-                    <p>Choose a User:</p>
-                    <select
-                        name="cars"
-                        id="cars"
-                        onChange={this.selectAuthedUser}
-                    >
-                        <option value="btnDisabled"></option>
-                        {userIds.map((user) => (
-                            <option key={user} value={users[user].id}>
-                                {users[user].name}
-                            </option>
-                        ))}
-                    </select>
-                    <button
-                        type="submit"
-                        disabled={this.state.toggle === "btnDisabled"}
-                    >
-                        Submit
-                    </button>
+                    <div className="card">
+                        <div className="card-header text-center">
+                            <h4>
+                                Would you rather app!
+                            </h4>
+                        </div>
+                        <div className="card-body">
+                            <h5 className="card-title text-center">Sign in</h5>
+                            <div class="input-group">
+                                <select
+                                    onChange={this.selectAuthedUser}
+                                    className="custom-select"
+                                >
+                                    <option value="btnDisabled">
+                                        Choose...
+                                    </option>
+                                    {userIds.map((user) => (
+                                        <option
+                                            key={user}
+                                            value={users[user].id}
+                                        >
+                                            {users[user].name}
+                                        </option>
+                                    ))}
+                                </select>
+                                <div class="input-group-append">
+                                    <button
+                                        class="btn btn-outline-secondary"
+                                        type="submit"
+                                        disabled={
+                                            this.state.toggle === "btnDisabled"
+                                        }
+                                    >
+                                        Sign in
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         );

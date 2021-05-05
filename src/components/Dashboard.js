@@ -8,28 +8,38 @@ class Dashboard extends Component {
         super();
         this.state = {
             toggle: true,
+            toggleUnAnswer: "active",
+            toggleAnswer: "null",
         };
     }
 
     handleAnswerView = (e) => {
         e.preventDefault();
-        this.setState({ toggle: false });
+        this.setState({
+            toggle: false,
+            toggleUnAnswer: "null",
+            toggleAnswer: "active",
+        });
     };
 
     handleUnAnswerView = (e) => {
         e.preventDefault();
-        this.setState({ toggle: true });
+        this.setState({
+            toggle: true,
+            toggleUnAnswer: "active",
+            toggleAnswer: "null",
+        });
     };
 
     render() {
         return (
-            <div className='center'>
+            <div className="center">
                 <div className="card">
                     <div className="card-header">
                         <ul className="nav nav-tabs card-header-tabs">
                             <li className="nav-item">
                                 <span
-                                    className="nav-link active"
+                                    className={`nav-link ${this.state.toggleUnAnswer}`}
                                     onClick={this.handleUnAnswerView}
                                 >
                                     Unanswered Question
@@ -37,7 +47,7 @@ class Dashboard extends Component {
                             </li>
                             <li class="nav-item">
                                 <span
-                                    className="nav-link"
+                                    className={`nav-link ${this.state.toggleAnswer}`}
                                     onClick={this.handleAnswerView}
                                 >
                                     Answered Question

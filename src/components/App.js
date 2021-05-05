@@ -34,7 +34,7 @@ class App extends Component {
                                 />
                                 <Route path="/poll/:id" component={PollView} />
                                 <Route path="/add" component={NewQuestion} />
-                                <Route path="/champs" component={LeaderPoll} />
+                                <Route path="/leaderboard" component={LeaderPoll} />
                             </div>
                         )}
                     </div>

@@ -23,7 +23,7 @@ class Nav extends Component {
                     </NavLink>
                 </li>
                 <li className="nav-item p-3">
-                    <NavLink to="/champs" exact activeClassName="active">
+                    <NavLink to="/leaderboard" exact activeClassName="active">
                         Leaderboard
                     </NavLink>
                 </li>

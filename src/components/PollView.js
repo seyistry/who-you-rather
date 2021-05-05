@@ -17,7 +17,9 @@ class PollView extends Component {
         return (
             <div>
                 <div className="card pollView-container">
-                    <div className="card-header font-weight-bolder">Asked by {user.name}</div>
+                    <div className="card-header font-weight-bolder">
+                        Asked by {user.name}
+                    </div>
                     <div className="card-body">
                         <div className="row">
                             <div className="col-3">
@@ -63,9 +65,7 @@ class PollView extends Component {
                                         </div>
                                         <br />
                                         <div className="border p-2">
-                                            <p >
-                                                {optionTwo.text}?{" "}
-                                            </p>
+                                            <p>{optionTwo.text}? </p>
                                             <div class="progress">
                                                 <div
                                                     class="progress-bar"

@@ -59,9 +59,24 @@ li {
 font-weight: bold;
 }
 
+.leaderPoll {
+  margin: auto;
+  width: 40%;
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .loginCenter {
   margin: auto;
-  width: 50%;
+  width: 40%;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .center {
@@ -126,5 +141,15 @@ font-weight: bold;
 .helper {
   display: block;
   margin: auto;
+}
+
+.newQuestion-container {
+  margin: auto;
+  width: 45%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 

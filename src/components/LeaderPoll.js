@@ -5,11 +5,10 @@ import ScoreList from "./ScoreList";
 class LeaderPoll extends Component {
     render() {
         return (
-            <div>
-                <h3 className="center">Leaders Board</h3>
+            <div className='leaderPoll'>
                 <ul className="dashboard-list">
                     {this.props.userSort.map((user) => (
-                        <li key={user.id}>
+                        <li key={user.id} >
                             <ScoreList user={user} />
                         </li>
                     ))}

@@ -30,7 +30,7 @@ class Question extends Component {
                             to={`/${this.props.value}/${this.props.id}`}
                             className="tweet"
                         >
-                            <button className="btn btn-primary">
+                            <button className="btn btn-outline-primary">
                                 View poll
                             </button>
                         </Link>

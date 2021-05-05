@@ -9,10 +9,6 @@ class PollView extends Component {
             return <p>The Poll Doesn't exist</p>;
         }
 
-        if (userAnswer === "optionOne") {
-        } else {
-        }
-
         const { optionOne, optionTwo } = question;
         const one = optionOne.votes.length;
         const two = optionTwo.votes.length;
@@ -21,7 +17,7 @@ class PollView extends Component {
         return (
             <div>
                 <div className="card pollView-container">
-                    <div className="card-header">Asked by {user.name}</div>
+                    <div className="card-header font-weight-bolder">Asked by {user.name}</div>
                     <div className="card-body">
                         <div className="row">
                             <div className="col-3">
@@ -67,7 +63,7 @@ class PollView extends Component {
                                         </div>
                                         <br />
                                         <div className="border p-2">
-                                            <p className="text-center">
+                                            <p >
                                                 {optionTwo.text}?{" "}
                                             </p>
                                             <div class="progress">

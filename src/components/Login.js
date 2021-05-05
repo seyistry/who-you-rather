@@ -66,7 +66,7 @@ class Login extends Component {
                                 </select>
                                 <div class="input-group-append">
                                     <button
-                                        class="btn btn-outline-secondary"
+                                        class="btn btn-outline-primary"
                                         type="submit"
                                         disabled={
                                             this.state.toggle === "btnDisabled"

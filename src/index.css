@@ -35,7 +35,7 @@ body {
   min-height: 100vh;
 }
 
-ul {
+ul,div,p {
   padding-left: 0;
 }
 
@@ -95,11 +95,36 @@ font-weight: bold;
   width: 100%;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-areas:
-    'menu main main main main main'
-    'menu footer footer footer footer footer';
-  grid-gap: 10px;
+.quizView-container {
+  margin: auto;
+  width: 30%;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.pollView-container {
+  margin: auto;
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.quiz-title {
+  font-size: 20px;
+}
+
+.quiz-btn {
+  width: 100%;
+}
+
+.helper {
+  display: block;
+  margin: auto;
 }
 

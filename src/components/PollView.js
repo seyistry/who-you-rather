@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 
 class PollView extends Component {
     render() {
-        const { question, user } = this.props;
+        const { question, userAnswer, user } = this.props;
 
         if (question === undefined) {
             return <p>The Poll Doesn't exist</p>;
         }
 
-        if (user === "optionOne") {
+        if (userAnswer === "optionOne") {
         } else {
         }
 
@@ -20,26 +20,129 @@ class PollView extends Component {
         const percentTwo = Math.round((two / (one + two)) * 100);
         return (
             <div>
-                <p>Would you rather</p>
-                {user === "optionOne" ? (
-                    <div>
-                        <p>
-                            {optionOne.text} Total votes: {one} at {percentOne}% user choice
-                        </p>
-                        <p>
-                            {optionTwo.text} Total votes: {two} at {percentTwo}%
-                        </p>
+                <div className="card pollView-container">
+                    <div className="card-header">Asked by {user.name}</div>
+                    <div className="card-body">
+                        <div className="row">
+                            <div className="col-3">
+                                <img
+                                    src={user.avatarURL}
+                                    alt="avatar"
+                                    className="avatar align-middle helper"
+                                />
+                            </div>
+                            <div className="col-9 border-left">
+                                <p
+                                    className="font-weight-bold"
+                                    style={{ "font-size": "20px" }}
+                                >
+                                    Result:
+                                </p>
+                                {userAnswer === "optionOne" ? (
+                                    <div>
+                                        <div className="border p-2">
+                                            <p>
+                                                {optionOne.text}?{" "}
+                                                <span class="badge badge-pill badge-warning">
+                                                    Your Vote
+                                                </span>
+                                            </p>
+                                            <div class="progress">
+                                                <div
+                                                    class="progress-bar"
+                                                    role="progressbar"
+                                                    style={{
+                                                        width: `${percentOne}%`,
+                                                    }}
+                                                    aria-valuenow="25"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                >
+                                                    {percentOne}%
+                                                </div>
+                                            </div>
+                                            <p>
+                                                {one} out of {one + two} votes
+                                            </p>
+                                        </div>
+                                        <br />
+                                        <div className="border p-2">
+                                            <p className="text-center">
+                                                {optionTwo.text}?{" "}
+                                            </p>
+                                            <div class="progress">
+                                                <div
+                                                    class="progress-bar"
+                                                    role="progressbar"
+                                                    style={{
+                                                        width: `${percentTwo}%`,
+                                                    }}
+                                                    aria-valuenow="25"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                >
+                                                    {percentTwo}%
+                                                </div>
+                                            </div>
+                                            <p className="text-center">
+                                                {two} out of {one + two} votes
+                                            </p>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <div className="border p-2">
+                                            <p>{optionOne.text}? </p>
+                                            <div className="progress">
+                                                <div
+                                                    className="progress-bar"
+                                                    role="progressbar"
+                                                    style={{
+                                                        width: `${percentOne}%`,
+                                                    }}
+                                                    aria-valuenow="25"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                >
+                                                    {percentOne}%
+                                                </div>
+                                            </div>
+                                            <p className="text-center">
+                                                {one} out of {one + two} votes
+                                            </p>
+                                        </div>
+                                        <br />
+                                        <div className="border p-2">
+                                            <p>
+                                                {optionTwo.text}?{" "}
+                                                <span class="badge badge-pill badge-warning">
+                                                    Your Vote
+                                                </span>
+                                            </p>
+                                            <div className="progress">
+                                                <div
+                                                    className="progress-bar"
+                                                    role="progressbar"
+                                                    style={{
+                                                        width: `${percentTwo}%`,
+                                                    }}
+                                                    aria-valuenow="25"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                >
+                                                    {percentTwo}%
+                                                </div>
+                                            </div>
+                                            <p className="text-center">
+                                                {two} out of {one + two} votes
+                                            </p>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
                     </div>
-                ) : (
-                    <div>
-                        <p>
-                            {optionOne.text} Total votes: {one} at {percentOne}%
-                        </p>
-                        <p>
-                            {optionTwo.text} Total votes: {two} at {percentTwo}% user choice
-                        </p>
-                    </div>
-                )}
+                </div>
             </div>
         );
     }
@@ -48,10 +151,12 @@ class PollView extends Component {
 function mapStateToProps({ authedUser, questions, users }, props) {
     const { id } = props.match.params;
     const question = questions[id];
-    const user = users[authedUser].answers[id];
-    console.log(user);
+    const userAnswer = users[authedUser].answers[id];
+    const user = users[question.author];
+
     return {
         question,
+        userAnswer,
         user,
     };
 }

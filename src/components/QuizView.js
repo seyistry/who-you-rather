@@ -40,7 +40,7 @@ class QuizView extends Component {
         const { id, question, user } = this.props;
 
         if (question === undefined) {
-            return <p>The Poll Doesn't exist</p>;
+            return <Redirect to={`/404/${id}`} />;
         }
 
         if (toPoll === true) {
@@ -101,7 +101,7 @@ class QuizView extends Component {
 function mapStateToProps({ questions, users }, props) {
     const { id } = props.match.params;
     const question = questions[id];
-    const user = users[question.author];
+    const user = question ? users[question.author] : null;
     return {
         id,
         user,

@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 class PollView extends Component {
     render() {
         const { question, userAnswer, user } = this.props;
 
         if (question === undefined) {
-            return <p>The Poll Doesn't exist</p>;
+            return <Redirect to={`/404/`} />;
         }
 
         const { optionOne, optionTwo } = question;
@@ -148,7 +149,7 @@ function mapStateToProps({ authedUser, questions, users }, props) {
     const { id } = props.match.params;
     const question = questions[id];
     const userAnswer = users[authedUser].answers[id];
-    const user = users[question.author];
+    const user = question ? users[question.author] : null;
 
     return {
         question,

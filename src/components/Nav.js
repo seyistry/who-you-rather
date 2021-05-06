@@ -43,36 +43,6 @@ class Nav extends Component {
                     )}
                 </li>
             </ul>
-            // <nav className="nav">
-            //     <ul>
-            //         <li>
-            //             <NavLink to="/" exact activeClassName="active">
-            //                 Home
-            //             </NavLink>
-            //         </li>
-            //         <li>
-            //             <NavLink to="/add" exact activeClassName="active">
-            //                 New Question
-            //             </NavLink>
-            //         </li>
-            //         <li>
-            //             <NavLink to="/champs" exact activeClassName="active">
-            //                 Leaderboard
-            //             </NavLink>
-            //         </li>
-            //         <li>
-            //             {authedUser === null ? (
-            //                 <div></div>
-            //             ) : (
-            //                 <div>
-            //                     <span>Hello {users[authedUser].name}</span>
-            //                     <img src={users[authedUser].avatarURL} alt={users[authedUser].name}/>
-            //                     <span onClick={this.handleClick}>Logout</span>
-            //                 </div>
-            //             )}
-            //         </li>
-            //     </ul>
-            // </nav>
         );
     }
 }

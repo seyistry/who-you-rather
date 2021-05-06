@@ -40,7 +40,7 @@ class QuizView extends Component {
         const { id, question, user } = this.props;
 
         if (question === undefined) {
-            return <Redirect to={`/404/${id}`} />;
+            return <Redirect to={`/404/`} />;
         }
 
         if (toPoll === true) {

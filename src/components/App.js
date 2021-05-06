@@ -9,15 +9,12 @@ import Nav from "./Nav";
 import PollView from "./PollView";
 import QuizView from "./QuizView";
 import LeaderPoll from "./LeaderPoll";
-import Login from './Login'
-import Error from './Error'
+import Login from "./Login";
+import Error from "./Error";
 
 class App extends Component {
-    componentDidMount() {
-        this.props.dispatch(handleIntialData());
-    }
-
     render() {
+        this.props.handleIntialData();
         return (
             <Router>
                 <Fragment>
@@ -35,7 +32,10 @@ class App extends Component {
                                 />
                                 <Route path="/poll/:id" component={PollView} />
                                 <Route path="/add" component={NewQuestion} />
-                                <Route path="/leaderboard" component={LeaderPoll} />
+                                <Route
+                                    path="/leaderboard"
+                                    component={LeaderPoll}
+                                />
                                 <Route path="/404" component={Error} />
                             </div>
                         )}
@@ -52,4 +52,4 @@ function mapStateToProps({ authedUser }) {
     };
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { handleIntialData })(App);

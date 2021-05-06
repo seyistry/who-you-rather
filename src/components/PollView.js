@@ -33,7 +33,7 @@ class PollView extends Component {
                             <div className="col-9 border-left">
                                 <p
                                     className="font-weight-bold"
-                                    style={{ "font-size": "20px" }}
+                                    style={{ "fontSize": "20px" }}
                                 >
                                     Result:
                                 </p>
@@ -42,13 +42,13 @@ class PollView extends Component {
                                         <div className="border p-2">
                                             <p>
                                                 {optionOne.text}?{" "}
-                                                <span class="badge badge-pill badge-warning">
+                                                <span className="badge badge-pill badge-warning">
                                                     Your Vote
                                                 </span>
                                             </p>
-                                            <div class="progress">
+                                            <div className="progress">
                                                 <div
-                                                    class="progress-bar"
+                                                    className="progress-bar"
                                                     role="progressbar"
                                                     style={{
                                                         width: `${percentOne}%`,
@@ -67,9 +67,9 @@ class PollView extends Component {
                                         <br />
                                         <div className="border p-2">
                                             <p>{optionTwo.text}? </p>
-                                            <div class="progress">
+                                            <div className="progress">
                                                 <div
-                                                    class="progress-bar"
+                                                    className="progress-bar"
                                                     role="progressbar"
                                                     style={{
                                                         width: `${percentTwo}%`,
@@ -112,7 +112,7 @@ class PollView extends Component {
                                         <div className="border p-2">
                                             <p>
                                                 {optionTwo.text}?{" "}
-                                                <span class="badge badge-pill badge-warning">
+                                                <span className="badge badge-pill badge-warning">
                                                     Your Vote
                                                 </span>
                                             </p>

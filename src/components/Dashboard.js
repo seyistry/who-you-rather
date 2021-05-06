@@ -45,7 +45,7 @@ class Dashboard extends Component {
                                     Unanswered Question
                                 </span>
                             </li>
-                            <li class="nav-item">
+                            <li className="nav-item">
                                 <span
                                     className={`nav-link ${this.state.toggleAnswer}`}
                                     onClick={this.handleAnswerView}

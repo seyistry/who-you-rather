@@ -47,7 +47,7 @@ class Login extends Component {
                         </div>
                         <div className="card-body">
                             <h5 className="card-title text-center">Sign in</h5>
-                            <div class="input-group">
+                            <div className="input-group">
                                 <select
                                     onChange={this.selectAuthedUser}
                                     className="custom-select"
@@ -64,9 +64,9 @@ class Login extends Component {
                                         </option>
                                     ))}
                                 </select>
-                                <div class="input-group-append">
+                                <div className="input-group-append">
                                     <button
-                                        class="btn btn-outline-primary"
+                                        className="btn btn-outline-primary"
                                         type="submit"
                                         disabled={
                                             this.state.toggle === "btnDisabled"

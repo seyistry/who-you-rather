@@ -10,8 +10,8 @@ class ScoreList extends Component {
 
         return (
             <div>
-                <div class="card">
-                    <div class="card-body">
+                <div className="card">
+                    <div className="card-body">
                         <div className="row">
                             <div className="col-3 pt-3">
                                 <img
@@ -31,10 +31,10 @@ class ScoreList extends Component {
                                 </p>
                             </div>
                             <div className="col-3">
-                                <div class="card">
-                                    <h5 class="card-header">Score</h5>
-                                    <div class="card-body">
-                                        <p class="card-text text-center">
+                                <div className="card">
+                                    <h5 className="card-header">Score</h5>
+                                    <div className="card-body">
+                                        <p className="card-text text-center">
                                             <strong>{score}</strong>
                                         </p>
                                     </div>

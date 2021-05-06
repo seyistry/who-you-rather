@@ -12,7 +12,7 @@ class Question extends Component {
         return (
             <div className="question-container pb-3">
                 <div className="card">
-                    <div class="card-body">
+                    <div className="card-body">
                         <h5 className="card-title">{`${name} asks`}</h5>
                         <div className="card-text row align-items-center">
                             <div className="col-2">

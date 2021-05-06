@@ -60,6 +60,10 @@ follow these instructions:
 3. Answer the question and see the results.
 4. Use the navigation to go back to the dashboard, create a new poll or see who the leader is.
 
+## Author
+
+- [Seyi Egunjobi](https://github.com/seyistry) - Design / Development
+
 
 
 
